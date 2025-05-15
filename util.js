@@ -4,10 +4,10 @@ function myPrinter(a) {
     console.log(':::',a,':::');
 }
 
-// // module.export = {
-//     myPrinter
-// }
-
-export default {
+module.export = {
     myPrinter
 }
+
+// export default {
+//     myPrinter
+// }
