@@ -1,4 +1,4 @@
-var http = {
+const http = {
      createServer () {
         // Define the callback function
         function cb1(req, res) {
@@ -6,17 +6,25 @@ var http = {
             res.end('Hello, World!\n');
         }
     },
-    listen (port, callback) {
-        console.log('>>>Listen Called');
-        callback();
+    
+    request: {
+        url: '/home'
+    },
+    response: {
+        end() {
+            console.log('>>>Response Called');
+            return;
+        }
+    },
+    createServer(cb1) {
+        cb1?.(this.request, this.response);
+        return;
     }
-    // Define the callback function
 }
 
-var server = {
-    listen:""
-}
-
+server.listen(3000, () => {
+    console.log('Server is running!');
+});
 
 
 
