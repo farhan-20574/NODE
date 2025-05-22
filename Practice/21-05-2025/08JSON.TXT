@@ -1,5 +1,5 @@
 Parsing JSON in JavaScript involves converting a JSON string into a JavaScript object. 
-his is achieved using the built-in JSON.parse() method.
+This is achieved using the built-in JSON.parse() method.
 
 const jsonString = '{"name": "John", "age": 30, "city": "New York"}';
 const jsonObject = JSON.parse(jsonString);
