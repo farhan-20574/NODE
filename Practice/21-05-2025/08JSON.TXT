@@ -1,0 +1,34 @@
+Parsing JSON in JavaScript involves converting a JSON string into a JavaScript object. 
+his is achieved using the built-in JSON.parse() method.
+
+const jsonString = '{"name": "John", "age": 30, "city": "New York"}';
+const jsonObject = JSON.parse(jsonString);
+
+console.log(jsonObject.name); // Output: John
+console.log(jsonObject.age);  // Output: 30
+console.log(jsonObject.city); // Output: New York
+
+
+It's crucial to ensure the string being parsed is valid JSON; 
+otherwise, a SyntaxError will be thrown. 
+For example, keys and string values must be enclosed in double quotes.
+
+
+try {
+  const invalidJSON = "{name: 'John', age: 30}";
+  JSON.parse(invalidJSON);
+} catch (e) {
+  console.error(e); // Output: SyntaxError: Unexpected token n in JSON at position 1
+}
+
+The JSON.parse() method can also accept an optional reviver function as a second argument. 
+This function allows for transforming the values of the parsed object before it's returned.
+
+const jsonString = '{"date": "2025-05-22T10:00:00.000Z"}';
+
+const jsonObject = JSON.parse(jsonString, (key, value) => {
+  if (key === 'date') {
+    return new Date(value);
+  }
+  return value;
+});
