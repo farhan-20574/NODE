@@ -1,15 +1,17 @@
-module.exports ={
-    Request :{
+module.exports = {
+    request: {
         url: '/home'
 
     },
-    response; {
-        end (){
+    response: {
+        end() {
             return;
         }
-    }
-    creatServer(cb1)
-        cb1?.(, response);
+    },
+    creatServer(cb1) {
+        cb1?.(this.request, this.response);
         return;
+    }
+
 }
 
