@@ -17,7 +17,9 @@ npm init -y
 npm install express
 ```
 
-Create an Express app.
+---
+
+#### 2. Create an Express app:
 
 ```javascript
 const express = require('express');
@@ -35,31 +37,38 @@ app.listen(port, () => {
 });
 ```
 
-Define API routes.
+---
+
+#### 3. Define API routes:
 
 ```javascript
+// GET request to fetch all users
 app.get('/api/users', (req, res) => {
-  // Handle GET request for all users
   res.json([{ id: 1, name: 'John Doe' }, { id: 2, name: 'Jane Smith' }]);
 });
 
+// POST request to create a new user
 app.post('/api/users', (req, res) => {
-  // Handle POST request to create a new user
   const newUser = req.body;
   // Save the new user to a database or in-memory storage
   res.status(201).json(newUser); // Respond with the created user and status code 201
 });
 ```
 
-Handle requests and responses:
-Use req (request) object to access request data (e.g., parameters, body, headers).
-Use res (response) object to send responses (e.g., data, status codes, headers).
+---
 
-Implement middleware:
-Middleware functions can be used for tasks like authentication, logging, and error handling.
+### Additional Steps:
 
-Connect to a database (optional):
-Use libraries like Mongoose (for MongoDB) or Sequelize (for SQL databases) to interact with databases.
+#### Handle requests and responses:
+- Use the `req` (request) object to access request data (e.g., parameters, body, headers).
+- Use the `res` (response) object to send responses (e.g., data, status codes, headers).
 
-Test the API:
-Use tools like Postman or curl to test the API endpoints.
+#### Implement middleware:
+- Middleware functions can be used for tasks like authentication, logging, and error handling.
+
+#### Connect to a database (optional):
+- Use libraries like **Mongoose** (for MongoDB) or **Sequelize** (for SQL databases) to interact with databases.
+
+#### Test the API:
+- Use tools like **Postman** or `curl` to test the API endpoints.
+```
