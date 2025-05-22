@@ -1,0 +1,36 @@
+HTTP methods, like GET, POST, PUT, and DELETE, are essential for web development, 
+enabling communication between clients and servers. These methods define the actions 
+a client requests the server to perform on a resource.
+
+### Here's a breakdown of each method:
+
+**GET**:  
+- Retrieves data from the server.  
+- It's considered a safe operation as it doesn't modify the server's state.  
+- GET requests can be cached by browsers, making them efficient for repeated requests.
+
+**POST**:  
+- Sends data to the server to create a new resource or submit data.  
+- It's often used for forms and creating new entries in a database.  
+- POST requests are not cached and can have side effects on the server.
+
+**PUT**:  
+- Replaces an existing resource entirely.  
+- The server receives the entire updated data, and if successful, the resource is 
+  completely overwritten.
+
+**DELETE**:  
+- Removes a resource from the server.  
+- It requests that the server delete the association between the target resource and 
+  its functionality.
+
+**PATCH**:  
+- Partially updates a resource.  
+- It allows for sending a change to only the specific part of a resource, rather than 
+  replacing the entire resource like PUT.
+
+---
+
+These methods, along with others like **OPTIONS**, **HEAD**, and **TRACE**, form the 
+core of how web clients interact with web servers, enabling data retrieval, 
+modification, and creation.
