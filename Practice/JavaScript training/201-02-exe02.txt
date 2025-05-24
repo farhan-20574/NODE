@@ -1,0 +1,26 @@
+Here’s the code snippet to check the user status based on the given conditions:
+
+```javascript
+// Create variables to check user status
+let isLoggedIn = true; // Change to false to test the "not logged in" case
+let isProSubscriber = false; // Change to true to test the "pro subscriber" case
+
+// Check user status
+if (!isLoggedIn) {
+    console.log("Please login first to see the data.");
+} else if (isLoggedIn && !isProSubscriber) {
+    console.log("Here is your data, consider subscribing to get access to pro features.");
+} else if (isLoggedIn && isProSubscriber) {
+    console.log("Thanks, you are a pro subscriber.");
+}
+```
+
+### Explanation:
+1. **`isLoggedIn`**: A boolean variable to check if the user is logged in.
+2. **`isProSubscriber`**: A boolean variable to check if the user is a pro subscriber.
+3. **Conditions**:
+   - If the user is **not logged in**, it prompts them to log in.
+   - If the user is **logged in but not a pro subscriber**, it suggests subscribing for pro features.
+   - If the user is **logged in and a pro subscriber**, it thanks them for being a pro subscriber.
+
+You can test the code by changing the values of `isLoggedIn` and `isProSubscriber`. Let me know if you need further assistance!

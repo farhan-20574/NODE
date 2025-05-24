@@ -1,0 +1,30 @@
+Here’s the code snippet to assign a grade based on the user's percentage:
+
+```javascript
+// User's percentage
+let percentage = 85; // Change this value to test different grades
+
+// Determine the grade
+if (percentage >= 90) {
+    console.log("A Grade");
+} else if (percentage >= 80) {
+    console.log("B Grade");
+} else if (percentage >= 70) {
+    console.log("C Grade");
+} else if (percentage >= 60) {
+    console.log("D Grade");
+} else {
+    console.log("F Grade");
+}
+```
+
+### Explanation:
+1. **`percentage`**: A variable that holds the user's percentage.
+2. **Conditions**:
+   - If the percentage is **90 or above**, the user gets an **A Grade**.
+   - If the percentage is **80 or above but less than 90**, the user gets a **B Grade**.
+   - If the percentage is **70 or above but less than 80**, the user gets a **C Grade**.
+   - If the percentage is **60 or above but less than 70**, the user gets a **D Grade**.
+   - If the percentage is **less than 60**, the user gets an **F Grade**.
+
+You can test the code by changing the value of `percentage`. Let me know if you need further assistance!
