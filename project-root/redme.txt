@@ -14,7 +14,20 @@ project-root/
 │   ├── middlewares/    # Custom middleware
 │   └── utils/          # Utility/helper functions
 │
+project-root/
 ├── public/             # Static files (HTML, CSS, JS, images)
+│
+├── public/                # All static assets
+│   ├── css/               # CSS files
+│   │   └── styles.css
+│   ├── images/            # Images (png, jpg, svg, etc.)
+│   │   └── logo.png
+│   ├── js/                # Client-side JavaScript
+│   │   └── main.js
+│   └── web/               # HTML files
+│       ├── index.html
+│       └── 06unknown.html
+│
 ├── tests/              # Unit and integration tests
 ├── node_modules/       # Installed dependencies
 ├── package.json        # Project metadata and scripts
