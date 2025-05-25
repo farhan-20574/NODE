@@ -1,0 +1,14 @@
+{
+  "name": "project-node-a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/project-node-a/public/web/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "myDev": "node main.js --watch"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
