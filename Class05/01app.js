@@ -16,20 +16,32 @@ function requestParser(req) {
 
 function requestHandler(req, res) {
     requestParser(req);
-    const [pathString, qureyString] = req.url.split('=');
-    req.path = pathString;
 
     console.log('::log::', req.path);
     console.log('::log::', req.method);
-    if (req.path === '/login' && req.method === 'GET') {
-        console.log('>>>LOGIN PAGE');
-    } else if (req.path === '/login' && req.method === 'POST') {
-        console.log('>>>LOGIN SUCCESS');
-    } else if (req.path === '/search' && req.method === 'GET' && req.query) {
-        console.log('>>>SEARCH ACTION');
-        if (req.query.product) {
-            console.log('>>>SEARCH PRODUCT');
-        }
+
+    switch (req.path) {
+        case '/login':
+            switch (req.method) {
+                case 'GET':
+                    console.log('>>>LOGIN PAGE');
+                    break;
+                case 'POST':
+                    console.log('>>>LOGIN SUCCESS');
+                    break;
+            }
+            break;
+        case '/search':
+            if (req.method === 'GET' && req.query) {
+                console.log('>>>SEARCH ACTION');
+                if (req.query.product) {
+                    console.log('>>>SEARCH PRODUCT');
+                }
+            }
+            break;
+        default:
+            // Optionally handle other routes
+            break;
     }
     res.end();
 }

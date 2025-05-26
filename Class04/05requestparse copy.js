@@ -16,8 +16,6 @@ function requestParser(req) {
 
 function requestHandler(req, res) {
     requestParser(req);
-    const [pathString, qureyString] = req.url.split('=');
-    req.path = pathString;
 
     console.log('::log::', req.path);
     console.log('::log::', req.method);
