@@ -4,6 +4,7 @@
   "description": "Ayaz Sir Class 6th Mddleware and Interceptors",
   "main": "app.js",
   "scripts": {
+    "myDev": "node app.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
