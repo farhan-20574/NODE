@@ -1,5 +1,5 @@
 const http = require('http');
-
+const { checkQuery } = require('./util.js');
 function queryParser(queries) {
     const obj = {}
 
@@ -53,6 +53,13 @@ const routes = [
     },
     {
         method: 'GET',
+        path: '/login',
+        handle: (req,res) => {
+            res.end(JSON.stringify(users));
+        }
+    },
+    {
+        method: 'GET',
         path: '/users',
         query: ['id'],
         handle: (req,res) => {
@@ -67,7 +74,7 @@ const routes = [
     {
         method: 'DELETE',
         path: '/users',
-        query: ['id'],
+        query: ['id', 'active'],
         handle: (req,res) => {
             const requiredUserIndex = users.findIndex((user) => user.id == req.query.id)
             users.splice(requiredUserIndex,1);
@@ -78,7 +85,6 @@ const routes = [
         }
     }
 ]
-
 
 function requestHandler(req, res) {
     requestParser(req);
@@ -92,7 +98,7 @@ function requestHandler(req, res) {
      *  --- DELETE -- DELETE user
      */
     //--- GET -- READ all users
-    const route = routes.find(route => route.method === req.method && req.path === route.path && !req.query?.id)
+    const route = routes.find(route => route.method === req.method && req.path === route.path && checkQuery(req.query, route.query))
     if(route){
         route.handle(req, res)
     } else {
@@ -103,6 +109,9 @@ function requestHandler(req, res) {
 };
 
 
+
+
+
 const app = http.createServer(requestHandler);
-const PORT = 3000;
+const PORT = 8000;
 app.listen(PORT, () => console.log('Server started...'))
