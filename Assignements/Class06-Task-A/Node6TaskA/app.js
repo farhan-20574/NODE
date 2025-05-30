@@ -1,5 +1,5 @@
 // const http = require('http');
-const { MiniExpress } = require('./mini-express.js');
+const { MiniExpress } = require('./Node6TaskA/views/mini-express.js');
 
 const app = new MiniExpress();
 
