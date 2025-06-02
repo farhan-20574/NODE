@@ -23,6 +23,7 @@ class MiniExpress {
         const server = http.createServer(this.requestHandler)
         // listen cb
         server.listen(PORT, cb)
+        
     }
 }
 
